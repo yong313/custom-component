@@ -3,8 +3,9 @@ import "../App.css";
 import styled from "styled-components";
 
 const Modal = (Props) => {
+  // 모달 열기 & 닫기
   const [isOpen, setIsOpen] = useState(false);
-  const openModalHandler = (event) => {
+  const ModalHandler = (event) => {
     if (isOpen) {
       // 배경 스크롤 방지 해제
       document.body.style.overflow = "unset";
@@ -15,12 +16,13 @@ const Modal = (Props) => {
       setIsOpen(!isOpen);
     }
   };
-  // test
+
   // esc로 닫기
   const keyPress = useCallback(
     (e) => {
       if (e.key === "Escape" && setIsOpen) {
         setIsOpen(!isOpen);
+        document.body.style.overflow = "unset";
       }
     },
     [isOpen, setIsOpen]
@@ -36,34 +38,34 @@ const Modal = (Props) => {
       <div className="box_one">
         <h3 className="box_name">Modal</h3>
       </div>
-      {/* 컨텐츠 */}
       <div className="box_two">
-        <ModalContainer>
-          <ModalBtn onClick={openModalHandler}>
-            {isOpen ? "Opened 🎉" : "Open Modal"}
-          </ModalBtn>
+        {/* 컨텐츠 */}
+        <ModalBox>
+          <ModalButton onClick={ModalHandler}>
+            {isOpen ? "Hello 🎉" : "Open Modal"}
+          </ModalButton>
 
           {isOpen ? (
-            <ModalBackdrop onClick={openModalHandler}>
-              <ModalView
+            <ModalBackGround onClick={ModalHandler}>
+              <ModalContents
                 onClick={(event) => {
                   event.stopPropagation();
                 }}
               >
-                <div className="close-btn" onClick={openModalHandler}>
+                <div className="close-btn" onClick={ModalHandler}>
                   &times;
                 </div>
                 <div>Hi there 👋</div>
-              </ModalView>
-            </ModalBackdrop>
+              </ModalContents>
+            </ModalBackGround>
           ) : null}
-        </ModalContainer>
+        </ModalBox>
       </div>
     </div>
   );
 };
 
-const ModalContainer = styled.div`
+const ModalBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +73,7 @@ const ModalContainer = styled.div`
   position: relative;
 `;
 
-const ModalBackdrop = styled.div`
+const ModalBackGround = styled.div`
   position: fixed;
   display: flex;
   justify-content: center;
@@ -97,7 +99,7 @@ const ModalBackdrop = styled.div`
   }
 `;
 
-const ModalBtn = styled.button`
+const ModalButton = styled.button`
   width: 150px;
   height: 50px;
   font-size: 15px;
@@ -122,9 +124,7 @@ const ModalBtn = styled.button`
   }
 `;
 
-const ModalView = styled.div.attrs((props) => ({
-  role: "dialog",
-}))`
+const ModalContents = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,7 +132,9 @@ const ModalView = styled.div.attrs((props) => ({
   background-color: #fff;
   width: 250px;
   height: 150px;
+  color: #1da1f2;
   font-size: 20px;
+  font-weight: bold;
   border-radius: 15px;
   position: relative;
   animation: fadeInModal 0.25s;
