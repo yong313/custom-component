@@ -145,3 +145,24 @@ const removeTags = (indexToRemove) => {
 > 5. true 값만 반환하는 새로운 배열을 setTags에 넣고 filter() 함수를 사용하여 tag 삭제 기능을 구현하였습니다.
  
 ---
+
+#### 5. ClickToEdit Component 🍕
+
+![clicktoedit](https://user-images.githubusercontent.com/85574104/152858606-fcd21b66-5a1a-4bc1-a182-bc5be62aa44e.gif)
+
+#### 구현 방법 .
+
+> useState 훅을 이용하여 input의 상태를 관리하고, useRef 훅으로 input 창을 클릭한 상태에서만 값을 변경할 수 있게 하였습니다.
+
+#### 어려웠던 점 해결 방법 .
+
+> 
+
+#### 자세한 실행 방법 .
+
+> 1. useState 훅을 이용하여 input의 상태를 관리하고, useRef 훅으로 input 창을 클릭한 상태에서만 값을 변경할 수 있게 하였습니다.
+> 2. myInput 컴포넌트를 만들어 input에 입력된 value 값을 핸들링하였고, label을 사용하여 input의 사용처를 사용자에게 전달합니다.
+> 3. handleClick 함수로 edit 모드가 활성화되며 input 창이 활성화되고, handleBlur 함수로 input 창이 아닌 다른 곳을 클릭하면 edit 모드를 비활성화됩니다.
+> 4. input에 입력한 값을 newValue에 담은 뒤, handleBlur에 의해서 handleValueChange 함수가 실행되어 값이 바뀌게 됩니다.
+ 
+---
