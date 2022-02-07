@@ -165,7 +165,7 @@ const ModalContents = styled.div`
       transition: 0.25s;
     }
     &:not(hover) {
-      color: #333;
+      color: #ccc;
       transition: 0.25s;
     }
   }
