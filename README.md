@@ -156,7 +156,37 @@ const removeTags = (indexToRemove) => {
 
 #### 어려웠던 점 해결 방법 .
 
-> 
+> input의 변경된 값을 저장하는 button이 따로 존재하지 않기 때문에 입력된 값을 변경하는 방법이 어려웠습니다. 해결 방법으로 input에 입력한 값을 newValue에 담은 뒤, handleBlur에 의해서 handleValueChange 함수가 실행되어 값이 바꿔 해결하였습니다.
+
+```jsx
+const [isEditMode, setEditMode] = useState(false);
+const [newValue, setNewValue] = useState(value);
+  
+const handleBlur = () => {
+    setEditMode(false);
+    handleValueChange(newValue);
+  };
+
+  const handleInputChange = (e) => {
+    setNewValue(e.target.value);
+  };
+
+  return (
+    <InputBox>
+      {isEditMode ? (
+        <InputEdit
+          type="text"
+          value={newValue}
+          ref={inputEl}
+          onBlur={handleBlur}
+          onChange={handleInputChange}
+        />
+      ) : (
+        <span onClick={handleClick}>{newValue}</span>
+      )}
+    </InputBox>
+  );
+```
 
 #### 자세한 실행 방법 .
 
