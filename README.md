@@ -75,3 +75,42 @@
 > 3. 토글스위치 하단의 텍스트 또한 `isToggleOn 상태를 활용`해서 `상태에 맞게 "Toggle Switch ON", "Toggle Switch OFF"`출력 되도록 하였습니다.
 
 ---
+
+#### 3. Tab Component 🍕
+
+![tab](https://user-images.githubusercontent.com/85574104/152844303-f1502168-3f74-4270-b98d-56d9e35d157e.gif)
+
+#### 구현 방법 .
+
+> li 엘리먼트를 `map 함수로 menu의 숫자만큼 만들어 준 뒤, 인덱스를 두 번째 인자로 넣어서 onClick 핸들러 함수에 index를 전달`했습니다. 그리고 인덱스를 전달받은 함수를 통해서 `currentTab 상태를 해당 인덱스로 바꿔주며 클릭 된 Tab의 className을 변경하고 클릭 된 메뉴의 CSS 값을 변경`, 선택된 li이 엘리먼트를 시각화 시켜줄 수 있게 됩니다.
+
+#### 어려웠던 점 해결 방법 .
+
+> 1. map함수의 두번째 인자로 index를 넣어서 핸들러 함수에 전달해주는 것이 포인트인데, map 함수 두번째 인자로 index를 넣어줄 수 있다는 것을 처음 알게되었습니다.
+
+```jsx
+<TabMenu>
+  {menuArr.map((el, index) => {
+    return (
+      <li
+        key={index}
+        className={`${
+          index === currentTab ? "submenu focused" : "submenu"
+        }`}
+        onClick={() => selectMenuHandler(index)}
+      >
+        {el.name}
+      </li>
+    );
+  })}
+</TabMenu>
+```
+
+#### 자세한 실행 방법 .
+
+> 1. li 엘리먼트를 `map 함수로 menu의 개수만큼` 만들었습니다.
+> 2. 인덱스를 `두 번째 인자로 넣어서 onClick 핸들러 함수에 index를 전달`합니다.
+> 3. 인덱스를 전달받은 함수를 통해서 `currentTab 상태를 해당 인덱스로 바꿔주면서 클릭된 Tab의 className을 바꿔주므로 인해서 클릭 된 메뉴의 CSS 속성만 바꿔 선택되었음을 시각화` 시켜줄 수 있게 하였습니다.
+ 
+---
+
