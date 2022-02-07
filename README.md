@@ -124,9 +124,24 @@
 
 #### 어려웠던 점 해결 방법 .
 
-> 1. 
+> 배열의 첫 번째 요소에 대한 인덱스를 반환하는 findIndex 함수를 사용하여 index를 찾아 삭제해 주는 방식을 사용하였지만, 비효율적이라 판단하여 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환하는 filter 함수를 사용하여 효율적을 로직을 구현하였습니다.
+
+```jsx
+const removeTags = (indexToRemove) => {
+    setTags(
+      tags.filter((tag) => {
+        return tag !== tags[indexToRemove];
+      })
+    );
+  };
+```
 
 #### 자세한 실행 방법 .
 
+> 1. map 함수를 사용하여 tag를 생성하였습니다.
+> 2. Enter 키를 사용하여 tag를 추가할 수 있도록 onKeyUp 함수를 사용하였습니다.
+> 3. 공백 입력을 방지하기 위해 trim 함수를 사용하였습니다.
+> 4. 중복된 tag를 검사하여 추가를 막기 위해 includes 함수를 사용하였습니다.
+> 5. true 값만 반환하는 새로운 배열을 setTags에 넣고 filter() 함수를 사용하여 tag 삭제 기능을 구현하였습니다.
  
 ---
