@@ -1,6 +1,6 @@
-### Wanted Pre Onboarding 🔥
+## Wanted Pre Onboarding 🔥
 
-#### 1. Modal Component 🍕
+### 1. Modal Component 🍕
 
 ![22](https://user-images.githubusercontent.com/85574104/152647073-e196c5a4-30aa-4df3-af8d-69ae23ec2985.gif)
 
@@ -32,7 +32,7 @@
 
 ---
 
-#### 2. Toggle Component 🍕
+### 2. Toggle Component 🍕
 
 ![toggle](https://user-images.githubusercontent.com/85574104/152837336-10015baa-dae0-4d72-bc78-960667724a2d.gif)
 
@@ -76,7 +76,7 @@
 
 ---
 
-#### 3. Tab Component 🍕
+### 3. Tab Component 🍕
 
 ![tab](https://user-images.githubusercontent.com/85574104/152844303-f1502168-3f74-4270-b98d-56d9e35d157e.gif)
 
@@ -114,7 +114,7 @@
  
 ---
 
-#### 4. Tag Component 🍕
+### 4. Tag Component 🍕
 
 ![tag](https://user-images.githubusercontent.com/85574104/152848563-5b0af22a-541b-47d9-9cc5-ce288260247d.gif)
 
@@ -146,7 +146,7 @@ const removeTags = (indexToRemove) => {
  
 ---
 
-#### 5. ClickToEdit Component 🍕
+### 5. ClickToEdit Component 🍕
 
 ![clicktoedit](https://user-images.githubusercontent.com/85574104/152858606-fcd21b66-5a1a-4bc1-a182-bc5be62aa44e.gif)
 
@@ -197,9 +197,9 @@ const handleBlur = () => {
  
 ---
 
-#### 6. AutoComplete Component 🍕
+### 6. AutoComplete Component 🍕
 
-<img width="480px" src="https://user-images.githubusercontent.com/85574104/152911188-9144d771-7660-455d-a72a-0c3d86308cbe.gif"/>
+<img width="480px" src="https://user-images.githubusercontent.com/85574104/152911873-5678af19-0c97-4f93-90ee-e9b700a20f3b.gif"/>
 
 #### 구현 방법 .
 
