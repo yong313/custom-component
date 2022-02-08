@@ -196,3 +196,21 @@ const handleBlur = () => {
 > 4. input에 입력한 값을 newValue에 담은 뒤, handleBlur에 의해서 handleValueChange 함수가 실행되어 값이 바뀌게 됩니다.
  
 ---
+
+#### 6. AutoComplete Component 🍕
+
+<img width="480px" src="https://user-images.githubusercontent.com/85574104/152911188-9144d771-7660-455d-a72a-0c3d86308cbe.gif"/>
+
+#### 구현 방법 .
+
+> 1
+
+#### 어려웠던 점 해결 방법 .
+
+> 1
+
+#### 자세한 실행 방법 .
+
+> 1
+
+<br />
